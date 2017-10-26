@@ -108,7 +108,14 @@ var radar = (function () {
 
                      Object.keys(independentAxesInfo).forEach(function (key) {
                         var axisInfo = independentAxesInfo[key];
-                        axisInfo.percentageScale = d3.scale.linear().domain([axisInfo.min, axisInfo.max]).range([0, 1]);
+                            if(axisInfo.min === axisInfo.max)
+                            {
+                                axisInfo.percentageScale = d3.scale.linear().domain([0, axisInfo.max]).range([0, 1]);
+                            }
+                            else {
+                                axisInfo.percentageScale = d3.scale.linear().domain([axisInfo.min, axisInfo.max]).range([0, 1]);
+                            }
+
                     });
                     csv = null; //allow memory to be GC'ed
                     //convert data to format nvd3 expects it
@@ -158,7 +165,13 @@ var radar = (function () {
                                     console.log('Chart name "' + chartName + '" missing data for radarAxis: ' + key);
                                 } else {
                                     radarAxisDataObject.originalValue = radarAxisDataObject.value
-                                    radarAxisDataObject.value = axisInfo.percentageScale(radarAxisDataObject.originalValue);
+                                    if(axisInfo.max === axisInfo.min) {
+                                        radarAxisDataObject.value = axisInfo.percentageScale(radarAxisDataObject.originalValue);
+                                    } else {
+                                        radarAxisDataObject.value = axisInfo.percentageScale(radarAxisDataObject.originalValue);
+                                    }
+
+
                                 }
                                 //at this point 'value' has been overwritten by percent value and original copied to originalValue
                                 radarAxisDataObject.scaledOpacity = axisOpacityScale(radarAxisDataObject.value);

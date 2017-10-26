@@ -48,9 +48,9 @@ auto ownership,Economic Vitality,69831,Everyone
 travel time,Economic Vitality,12462517,Everyone
 trk travel time benefit,Economic Vitality,834686,Everyone
 travel time reliability,Economic Vitality,1313755,Everyone
-public health,Social Goods,-1500000,Everyone
-auto operating cost,Economic Vitality,-6887689,Everyone
-emissions,Environmental Stewardship,-2181843,Everyone
-noise pollution,Environmental Stewardship,-365282,Everyone
-surface water pollution,Environmental Stewardship,-398267,Everyone
-safety,Social Goods,809272,Everyone
+public health,Social Goods,"-1,500,000",Everyone
+auto operating cost,Economic Vitality,"-6,887,689",Everyone
+emissions,Environmental Stewardship,"-2,181,843",Everyone
+noise pollution,Environmental Stewardship,"-365,282",Everyone
+surface water pollution,Environmental Stewardship,"-398,267",Everyone
+safety,Social Goods,"809,272",Everyone
